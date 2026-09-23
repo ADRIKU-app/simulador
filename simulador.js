@@ -31,7 +31,11 @@ function calcular(){
     let plazo=parseInt(plazoStr);
     let tasa=parseInt(tasaStr);
 
-    let interesPagar=calcularInteresSimple(monto,plazo,tasa);
+    let interesPagar=calcularInteresSimple(monto,tasa,plazo);
     let cmpInteresPagar=document.getElementById("spnInteresPagar");
         cmpInteresPagar.innerText = interesPagar.toFixed(2);
+
+    let valorTotalAPagar=calcularTotalPagar(monto,interesPagar);
+    let cmpValorTotal=document.getElementById("spnTotalPrestamo");
+        cmpValorTotal.innerText = valorTotalAPagar.toFixed(2);
 }
