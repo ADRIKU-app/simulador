@@ -38,4 +38,8 @@ function calcular(){
     let valorTotalAPagar=calcularTotalPagar(monto,interesPagar);
     let cmpValorTotal=document.getElementById("spnTotalPrestamo");
         cmpValorTotal.innerText = valorTotalAPagar.toFixed(2);
+
+    let valorCuotaMensual=calcularCuotaMensual(valorTotalAPagar,plazo);
+    let cmpValorCuota=document.getElementById("spnCuotaMensual");
+        cmpValorCuota.innerText = valorCuotaMensual.toFixed(2);
 }
