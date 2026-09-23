@@ -42,4 +42,13 @@ function calcular(){
     let valorCuotaMensual=calcularCuotaMensual(valorTotalAPagar,plazo);
     let cmpValorCuota=document.getElementById("spnCuotaMensual");
         cmpValorCuota.innerText = valorCuotaMensual.toFixed(2);
+
+    let creditoAprobado=aprobarCredito(capacidadDePago,valorCuotaMensual);
+    let cmpEstadoCredito=document.getElementById("spnEstadoCredito");
+
+    if (creditoAprobado == true) {
+    cmpEstadoCredito.innerText = "CREDITO APROBADO";
+    } else {
+    cmpEstadoCredito.innerText = "CREDITO RECHAZADO";
+    }
 }
