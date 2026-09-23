@@ -10,7 +10,12 @@ function calcular(){
     let valorEgresos=parseFloat(valorEgresosStr);
 
     let valorDisponible=calcularDisponible(valorIngresos,valorEgresos);
-        cmpDisponible=document.getElementById("spnDisponible");
+    let cmpDisponible=document.getElementById("spnDisponible");
 
         cmpDisponible.innerText = valorDisponible.toFixed(2);
+
+    let capacidadDePago=calcularCapacidadPago(valorDisponible);
+    let cmpCapacidadPago=document.getElementById("spnCapacidadPago");
+
+        cmpCapacidadPago.innerText = capacidadDePago.toFixed(2);
 }
