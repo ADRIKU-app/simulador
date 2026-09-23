@@ -1,0 +1,16 @@
+PROMPT 1:
+Ahora actúa como un diseñador gráfico profesional y mejora el diseño y aspecto del sitio web, dale un aspecto empresarial 
+utilizando el logo adjuntado y agrega un encabezado a la página con el nombre de la entidad financiera.
+Utiliza la paleta de colores del logo para generar un aspecto armónico entre los colores de la web y los colores del logo:
+primary color #098728 (forest green)
+secondary color #B80909 (deep red)
+tertiary color #FFFFFF (white).
+Te adjunto el archivo html y css.
+En el archivo html realiza las actualizaciones necesarias para que funcione correctamente sin editar los ids para que no 
+se dañen las funciones creadas en los archivos js.
+
+PROMPT 2: 
+Ahora necesito que vuelvas a analizar los códigos y hagas que sean responsive para que la página web sea compatible con 
+dispositivos móviles en distintos tamaños de pantllas.
+No incluyas librerías de ningún tipo ya que por el momento solo tengo mi código html y css.
+

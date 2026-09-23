@@ -3,40 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>Simulador de Crédito - Banco Tsáchila</title>
     <link rel="stylesheet" href="simulador.css">
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
 </head>
 <body>
 
+    <!-- Nuevo encabezado corporativo -->
+    <header class="bank-header">
+        <img src="logo_BT.jpg" alt="Logo Banco Tsáchila" class="logo">
+        <div class="bank-name">BANCO TSÁCHILA</div>
+    </header>
+
     <div class="container">
         <h1>Simulador de Crédito</h1>
 
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+        <input type="text" id="txtIngresos" placeholder="Ej: 1500.00">
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <input type="text" id="txtEgresos" placeholder="Ej: 800.00">
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <p class="result-row">Disponible: <span id="spnDisponible"></span></p>
+        <p class="result-row">Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+
+        <hr class="divider">
 
         <h2>Solicitud de crédito</h2>
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+        <input type="text" id="txtMonto" placeholder="Ej: 5000">
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+        <input type="text" id="txtPlazo" placeholder="Ej: 3">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtTasaInteres">Tasa de interés (%):</label>
+        <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <div class="results-box">
+            <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
+            <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
+            <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
+            <p class="status">Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        </div>
 
         <div class="buttons">
             <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>

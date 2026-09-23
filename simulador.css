@@ -1,70 +1,191 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f6f8;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+/* Estilos del Encabezado Corporativo */
+.bank-header {
+    background-color: #FFFFFF;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centramos el contenido para mayor equilibrio */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #098728;
+}
+
+.logo {
+    height: 150px;
+    margin-right: 15px;
+}
+
+.bank-name {
+    font-size: 35px;
+    font-weight: 800;
+    color: #098728;
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor Principal del Simulador (AHORA RESPONSIVE) */
 .container {
-    width: 400px;
+    width: 90%; /* Usamos porcentaje para que se adapte a pantallas pequeñas */
+    max-width: 450px; /* Evita que se estire demasiado en monitores grandes */
     margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 5px solid #098728;
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #098728;
+    font-size: 22px;
 }
 
 h2 {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
 }
 
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
 }
 
 input {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 4px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #098728;
+    outline: none;
+    box-shadow: 0 0 5px rgba(9, 135, 40, 0.2);
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 25px 0;
 }
 
 p {
-    margin-top: 10px;
-}
-
-span {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.buttons {
-    margin-top: 20px;
+    margin: 10px 0;
+    font-size: 15px;
     display: flex;
     justify-content: space-between;
 }
 
-button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
+span {
     font-weight: bold;
-    cursor: pointer;
+    color: #B80909;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #2980b9;
+.results-box {
+    background-color: #f9fbf9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    border: 1px solid #e0e8e2;
+}
+
+.status {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+/* Botones interactivos */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Separación manejada dinámicamente */
+}
+
+button {
+    width: 100%; /* El botón tomará todo el espacio disponible */
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btnCalcularCredito { background-color: #098728; }
+#btnCalcularCredito:hover { background-color: #076b1f; }
+
+#btnReiniciar { background-color: #B80909; }
+#btnReiniciar:hover { background-color: #940707; }
+
+
+/* =========================================
+   DISEÑO RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 600px) {
+    /* Ajustes del encabezado */
+    .bank-header {
+        flex-direction: column; /* Apila el logo sobre el nombre */
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px; /* Separación hacia abajo */
+        height: 45px; /* Logo ligeramente más pequeño */
+    }
+
+    .bank-name {
+        font-size: 20px; /* Letra un poco más pequeña */
+    }
+
+    /* Ajustes del contenedor principal */
+    .container {
+        margin: 20px auto; /* Menos margen superior/inferior */
+        padding: 20px; /* Menos espacio interior para aprovechar pantalla */
+    }
+
+    /* Ajustes de tipografía en resultados */
+    p {
+        font-size: 14px;
+        flex-direction: column; /* Pone la etiqueta arriba y el valor abajo si no hay espacio */
+        align-items: flex-start;
+    }
+
+    span {
+        margin-top: 4px;
+        font-size: 15px;
+    }
+
+    /* Apilar botones verticalmente para que sean más fáciles de presionar */
+    .buttons {
+        flex-direction: column; 
+    }
 }
