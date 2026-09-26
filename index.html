@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- Nuevo encabezado corporativo -->
     <header class="bank-header">
         <img src="logo_BT.jpg" alt="Logo Banco Tsáchila" class="logo">
         <div class="bank-name">BANCO TSÁCHILA</div>
@@ -21,10 +20,12 @@
 
         <h2>Datos financieros</h2>
         <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos" placeholder="Ej: 1500.00">
+        <input type="text" id="txtIngresos" placeholder="Ej: 1500.00" onblur="validarGenerico('txtIngresos', 'errIngresos')">
+        <div id="errIngresos" class="error-msg"></div>
 
         <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos" placeholder="Ej: 800.00">
+        <input type="text" id="txtEgresos" placeholder="Ej: 800.00" onblur="validarEgresos()">
+        <div id="errEgresos" class="error-msg"></div>
 
         <p class="result-row">Disponible: <span id="spnDisponible"></span></p>
         <p class="result-row">Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
@@ -33,13 +34,16 @@
 
         <h2>Solicitud de crédito</h2>
         <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto" placeholder="Ej: 5000">
+        <input type="text" id="txtMonto" placeholder="Ej: 5000" onblur="validarGenerico('txtMonto', 'errMonto')">
+        <div id="errMonto" class="error-msg"></div>
 
         <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo" placeholder="Ej: 3">
+        <input type="text" id="txtPlazo" placeholder="Ej: 3" onblur="validarPlazo()">
+        <div id="errPlazo" class="error-msg"></div>
 
         <label for="txtTasaInteres">Tasa de interés (%):</label>
-        <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
+        <input type="text" id="txtTasaInteres" placeholder="Ej: 12" onblur="validarGenerico('txtTasaInteres', 'errTasaInteres')">
+        <div id="errTasaInteres" class="error-msg"></div>
 
         <div class="results-box">
             <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
