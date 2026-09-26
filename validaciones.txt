@@ -1,0 +1,14 @@
+Quiero validar inputs en JavaScript
+Reglas:
+- Mostrar mensaje debajo de cada input (no usar alert)
+- El mensaje debe ser en color rojo y en cursiva
+Validaciones:
+- Solo usar números
+- No puede estar vacío
+- El monto digitado en el input "Egresos" no debe ser mayor al input "Ingresos"
+- El input "Plazo en años" no debe ser mayor a 5 años
+Condiciones técnicas:
+- Usar los mismos ids existentes dentro del código HTML
+Usar eventos:
+- onblur para validar cuando el usuario sale del input
+- No modificar ids existentes.
